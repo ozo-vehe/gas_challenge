@@ -21,6 +21,13 @@ describe("Deploy Gas Challenge Contract", () => {
   describe("Check Sum Of Array", () => {
     it("Should return 0", async () => {
       // Write test block here to check sum of array equals 0
+      
+      // First call the optimizedFunction() function from the deployed smart contract
+      await gas_contract.optimizedFunction();
+      // Call the getSumOfArray() function and store the returned value in the variable sum
+      const sum = await gas_contract.getSumOfArray();
+      // Check is the returned value(sum) is equal to 0
+      expect(sum).to.equal(0);
     });
   });
 });

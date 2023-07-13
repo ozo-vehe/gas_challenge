@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract gasChallenge {
     //Implement Fixed-Size Array Technique Here
-    uint[] numbers = [1,2,3,4,5,6,7,8,9,10];
+    uint[10] numbers = [1,2,3,4,5,6,7,8,9,10];
     
     //Function to check for sum of array
     //No changes required in this function
@@ -24,6 +24,16 @@ contract gasChallenge {
     //Implement Remaining Gas Optimization Techniques Here
     //Sum of elements in the numbers array should equal 0
     function optimizedFunction() public {
-      
+        // Caching of the state variable and storing it in a local variable
+        uint length = numbers.length;
+
+        // Using the uncheck block
+        unchecked {
+            // Different for loop increment syntax using the local variable length
+            for (uint i = 0; i < length; i++) {
+                numbers[i] = 0;
+            }
+
+        }
     }
  }
