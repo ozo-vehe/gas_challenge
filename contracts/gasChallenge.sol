@@ -29,8 +29,8 @@ contract gasChallenge {
 
         // Using the uncheck block
         unchecked {
-            // Different for loop increment syntax using the local variable length
-            for (uint i = 0; i < length; i++) {
+            // Using a different for loop increment syntax
+            for (uint i = 0; i < length; i += 1) {
                 numbers[i] = 0;
             }
 
